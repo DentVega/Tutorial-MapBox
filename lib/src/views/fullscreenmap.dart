@@ -29,6 +29,22 @@ class _FullScreenMapState extends State<FullScreenMap> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        //Simbolo
+        FloatingActionButton(
+          onPressed: () {
+            mapboxMapController.addSymbol(SymbolOptions(
+                geometry: center,
+                // https://github.com/mapbox/mapbox-gl-styles
+                iconImage: 'heliport-15',
+                iconSize: 3,
+                textField: 'Montaña Creada Aqui',
+                textOffset: Offset(0, 2)));
+          },
+          child: Icon(Icons.sentiment_very_dissatisfied),
+        ),
+        SizedBox(
+          height: 5,
+        ),
         //Zoom In
         FloatingActionButton(
           onPressed: () {
